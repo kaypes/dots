@@ -1,7 +1,9 @@
 [language-server]
 
+bash-language-server = { command = "bash-language-server", args = ["start"] }
 clangd = { command = "clangd" }
 neocmakelsp = { command = "neocmakelsp", args = ["stdio"] }
+fish-lsp = { command = "fish-lsp", args = ["start"], environment = { fish_lsp_show_client_popups = "false" } }
 ghostty-ls = { command = "ghostty-ls" }
 vscode-json-language-server = { command = "vscode-json-language-server", args = ["--stdio"], config = { provideFormatter = true, json = { validate = { enable = true } } } }
 mesonlsp = { command = "mesonlsp", args = ["--lsp"] }
@@ -58,6 +60,63 @@ inlayHints.typeHints.hideClosureInitialization = false
 
 [language-server.rust-analyzer.config.files]
 watcher = "server"
+
+[[language]]
+name = "bash"
+scope = "source.bash"
+injection-regex = "(shell|bash|zsh|sh)"
+file-types = [
+  "sh",
+  "bash",
+  "ash",
+  "dash",
+  "ksh",
+  "mksh",
+  "zsh",
+  "zshenv",
+  "zlogin",
+  "zlogout",
+  "zprofile",
+  "zshrc",
+  "eclass",
+  "ebuild",
+  "bazelrc",
+  "Renviron",
+  "zsh-theme",
+  "cshrc",
+  "tcshrc",
+  "bashrc_Apple_Terminal",
+  "zshrc_Apple_Terminal",
+  { glob = "i3/config" },
+  { glob = "sway/config" },
+  { glob = "tmux.conf" },
+  { glob = ".bash_history" },
+  { glob = ".bash_login" },
+  { glob = ".bash_logout" },
+  { glob = ".bash_profile" },
+  { glob = ".bashrc" },
+  { glob = ".profile" },
+  { glob = ".zshenv" },
+  { glob = ".zlogin" },
+  { glob = ".zlogout" },
+  { glob = ".zprofile" },
+  { glob = ".zshrc" },
+  { glob = ".zimrc" },
+  { glob = "APKBUILD" },
+  { glob = ".bash_aliases" },
+  { glob = ".Renviron" },
+  { glob = ".xprofile" },
+  { glob = ".xsession" },
+  { glob = ".xsessionrc" },
+  { glob = ".yashrc" },
+  { glob = ".yash_profile" },
+  { glob = ".hushlogin" },
+]
+shebangs = ["sh", "bash", "dash", "zsh"]
+comment-token = "#"
+language-servers = [ "bash-language-server" ]
+indent = { tab-width = 2, unit = "  " }
+
 
 [[language]]
 name = "c"
@@ -137,6 +196,19 @@ name = "gdbserver attach"
 request = "attach"
 completion = [ { name = "lldb connect url", default = "connect://localhost:3333" }, { name = "file", completion = "filename" }, "pid" ]
 args = { console = "internalConsole", attachCommands = [ "platform select remote-gdb-server", "platform connect {0}", "file {1}", "attach {2}" ] }
+
+
+[[language]]
+name = "fish"
+scope = "source.fish"
+injection-regex = "fish"
+file-types = ["fish"]
+shebangs = ["fish"]
+comment-token = "#"
+language-servers = ["fish-lsp"]
+indent = { tab-width = 4, unit = "    " }
+auto-format = true
+formatter = { command = "fish_indent" }
 
 
 [[language]]
@@ -743,6 +815,10 @@ completion = [ { name = "lldb connect url", default = "connect://localhost:3333"
 args = { console = "internalConsole", attachCommands = [ "platform select remote-gdb-server", "platform connect {0}", "file {1}", "attach {2}" ] }
 
 [[grammar]]
+name = "bash"
+source = { git = "https://github.com/tree-sitter/tree-sitter-bash", rev = "487734f87fd87118028a65a4599352fa99c9cde8" }
+
+[[grammar]]
 name = "c"
 source = { git = "https://github.com/tree-sitter/tree-sitter-c", rev = "b780e47fc780ddc8da13afa35a3f4ed5c157823d" }
 
@@ -753,6 +829,10 @@ source = { git = "https://github.com/uyha/tree-sitter-cmake", rev = "c7b2a71e7f8
 [[grammar]]
 name = "cpp"
 source = { git = "https://github.com/tree-sitter/tree-sitter-cpp", rev = "8b5b49eb196bec7040441bee33b2c9a4838d6967" }
+
+[[grammar]]
+name = "fish"
+source = { git = "https://github.com/ram02z/tree-sitter-fish", rev = "a78aef9abc395c600c38a037ac779afc7e3cc9e0" }
 
 [[grammar]]
 name = "ghostty"
