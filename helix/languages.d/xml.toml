@@ -1,0 +1,99 @@
+[[language]]
+name = "xml"
+scope = "source.xml"
+injection-regex = "xml"
+file-types = [
+  "ascx",
+  "atom",
+  "axaml",
+  "axml",
+  "bpmn",
+  "checkstyle",
+  "cpt",
+  "csl",
+  "csproj.user",
+  "dita",
+  "ditamap",
+  "dtml",
+  "fods",
+  "fodt",
+  "fxml",
+  "gir",
+  "glif",
+  "gml",
+  "gpx",
+  "iml",
+  "isml",
+  "itermcolors",
+  "jmx",
+  "kml",
+  "launch",
+  "menu",
+  "mobileconfig",
+  "mpd",
+  "musicxml",
+  "mxml",
+  "ncx",
+  "nuspec",
+  "opml",
+  "osc",
+  "osm",
+  "plist",
+  "policy",
+  "pproj",
+  "pt",
+  "publishsettings",
+  "pubxml",
+  "pubxml.user",
+  "rbxlx",
+  "rbxmx",
+  "resx",
+  "rng",
+  "rss",
+  "shproj",
+  "smil",
+  "storyboard",
+  "sublime-snippet",
+  "svg",
+  "terminal",
+  "tld",
+  "tmx",
+  "ui",
+  "vbproj.user",
+  "vcxproj",
+  "vcxproj.filters",
+  "wixproj",
+  "wsdl",
+  "wxi",
+  "wxs",
+  "xaml",
+  "xbl",
+  "xib",
+  "xlf",
+  "xliff",
+  "xml",
+  "xmp",
+  "xoml",
+  "xpdl",
+  "xrc",
+  "xsd",
+  "xsl",
+  "xul",
+  { glob = "*.tm[Ll]anguage" },
+  { glob = "*.tm[Pp]references" },
+  { glob = "*.tm[Tt]heme" },
+]
+block-comment-tokens = { start = "<!--", end = "-->" }
+indent = { tab-width = 2, unit = "  " }
+
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+"'" = "'"
+"<" = ">"
+
+[[grammar]]
+name = "xml"
+source = { git = "https://github.com/RenjiSann/tree-sitter-xml", rev = "48a7c2b6fb9d515577e115e6788937e837815651" }

@@ -1,0 +1,12 @@
+[[language]]
+name = "kdl"
+scope = "source.kdl"
+file-types = ["kdl"]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+injection-regex = "kdl"
+formatter = { command = "kdlfmt", args = ["format", "-"] }
+
+[[grammar]]
+name = "kdl"
+source = { git = "https://github.com/amaanq/tree-sitter-kdl", rev = "b37e3d58e5c5cf8d739b315d6114e02d42e66664" }

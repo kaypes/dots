@@ -1,0 +1,19 @@
+[[language]]
+name = "scheme"
+scope = "source.scheme"
+injection-regex = "scheme"
+file-types = ["ss", "scm", "sld"]
+shebangs = ["scheme", "guile", "chicken"]
+comment-token = ";"
+block-comment-tokens = { start = "#|", end = "|#" }
+indent = { tab-width = 2, unit = "  " }
+
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+
+[[grammar]]
+name = "scheme"
+source = { git = "https://github.com/6cdh/tree-sitter-scheme", rev = "c6cb7c7d7a04b3f5d999c28e2e9c0c31b2d50ece" }

@@ -1,0 +1,19 @@
+[language-server]
+
+mojo-lsp-server = { command = "pixi", args = ["run", "mojo-lsp-server"] }
+
+[[language]]
+name = "mojo"
+scope = "source.mojo"
+roots = ["pixi.toml", "pixi.lock"]
+injection-regex = "mojo"
+file-types = ["mojo", "🔥"]
+language-servers = [ "mojo-lsp-server" ]
+comment-token = "#"
+indent = { tab-width = 4, unit = "    " }
+auto-format = true
+formatter = { command = "pixi", args = ["run", "mojo" , "format", "-q", "-"]}
+
+[[grammar]]
+name = "mojo"
+source = { git = "https://github.com/lsh/tree-sitter-mojo", rev = "3d7c53b8038f9ebbb57cd2e61296180aa5c1cf64" }

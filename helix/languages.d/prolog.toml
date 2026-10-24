@@ -1,0 +1,16 @@
+[language-server]
+
+swipl = { command = "swipl", args = [ "-g", "use_module(library(lsp_server))", "-g", "lsp_server:main", "-t", "halt", "--", "stdio" ] }
+
+[[language]]
+name = "prolog"
+scope = "source.prolog"
+file-types = ["pl", "prolog"]
+shebangs = ["swipl"]
+comment-token = "%"
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = [ "swipl" ]
+
+[[grammar]]
+name = "prolog"
+source = { git = "https://codeberg.org/foxy/tree-sitter-prolog", subpath = "grammars/prolog", rev = "d8d415f6a1cf80ca138524bcc395810b176d40fa" }

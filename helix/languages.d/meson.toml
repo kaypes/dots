@@ -1,0 +1,16 @@
+[language-server]
+
+mesonlsp = { command = "mesonlsp", args = ["--lsp"] }
+
+[[language]]
+name = "meson"
+scope = "source.meson"
+injection-regex = "meson"
+file-types = [{ glob = "meson.build" }, { glob = "meson.options" }, { glob = "meson_options.txt" }]
+comment-token = "#"
+indent = { tab-width = 2, unit = "  " }
+language-servers = [ "mesonlsp" ]
+
+[[grammar]]
+name = "meson"
+source = { git = "https://github.com/tree-sitter-grammars/tree-sitter-meson", rev = "c84f3540624b81fc44067030afce2ff78d6ede05" }
