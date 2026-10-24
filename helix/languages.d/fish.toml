@@ -1,0 +1,19 @@
+[language-server]
+
+fish-lsp = { command = "fish-lsp", args = ["start"], environment = { fish_lsp_show_client_popups = "false" } }
+
+[[language]]
+name = "fish"
+scope = "source.fish"
+injection-regex = "fish"
+file-types = ["fish"]
+shebangs = ["fish"]
+comment-token = "#"
+language-servers = ["fish-lsp"]
+indent = { tab-width = 4, unit = "    " }
+auto-format = true
+formatter = { command = "fish_indent" }
+
+[[grammar]]
+name = "fish"
+source = { git = "https://github.com/ram02z/tree-sitter-fish", rev = "a78aef9abc395c600c38a037ac779afc7e3cc9e0" }
