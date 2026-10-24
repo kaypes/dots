@@ -1,0 +1,66 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative"
+mouse = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal]
+C-o = ":open ~/.config/helix/config.toml"
+
+w = "move_line_up"
+a = "move_char_left"
+s = "move_line_down"
+d = "move_char_right"
+
+C-S-esc = "extend_line"
+ret = ["open_below", "normal_mode"]
+A-x = "@x<A-d>"
+C-S-z = "redo"
+
+C-s = ":w"
+C-y = "redo"
+C-z = "undo"
+C-q = ":q"
+Meta-q = ":q!"
+F5 = ":sh ~/.config/helix/scripts/compilar.sh"
+
+esc = ["collapse_selection", "keep_primary_selection"]
+backspace = "delete_selection"
+C-a = "select_all"
+C-x = ["yank_to_clipboard", "delete_selection"]
+C-c = "yank_to_clipboard"
+C-v = "paste_clipboard_after"
+
+[keys.insert]
+A-x = "normal_mode"
+C-a = "select_all"
+C-x = ["yank_to_clipboard", "delete_selection"]
+C-c = "yank_to_clipboard"
+C-v = "paste_clipboard_after"
+
+C-s = ":w"
+C-y = "redo"
+C-z = "undo"
+C-q = ":q"
+Meta-q = ":q!"
+F5 = ":sh ~/.config/helix/scripts/compilar.sh"
+
+[keys.normal.g]
+a = "code_action"
+
+[keys.normal.z]
+j = "scroll_up"
+k = "scroll_down"
+
+[keys.normal."+"]
+m = ":run-shell-command make"
+c = ":run-shell-command cargo build"
+t = ":run-shell-command cargo test"
