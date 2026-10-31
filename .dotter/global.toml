@@ -1,3 +1,3 @@
 [helix.files]
-"helix/config.toml" = { target = "~/.config/helix/config.toml", type = "symbolic" }
-"helix/languages.toml" = { target = "~/.config/helix/languages.toml", type = "symbolic" }
+"helix/config.toml" = "~/.config/helix/config.toml"
+"helix/languages.toml" = "~/.config/helix/languages.toml"
