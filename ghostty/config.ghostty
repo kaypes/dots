@@ -1,0 +1,21 @@
+theme = "catppuccin-mocha"
+
+font-family = "JetBrainsMono Nerd Font"
+font-size = 13
+font-feature = +calt
+font-feature = +liga
+font-feature = +dlig
+
+keybind = shift+up=scroll_page_lines:-25
+keybind = shift+down=scroll_page_lines:25
+
+keybind = ctrl+shift+r=reload_config
+
+window-theme = ghostty
+
+background-opacity = 0.90
+background-blur = true
+
+shell-integration-features = ssh-env
+shell-integration-features = ssh-terminfo
+
