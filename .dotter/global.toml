@@ -1,3 +1,7 @@
+[ghostty.files]
+"ghostty/config.ghostty" = "~/.config/ghostty/config.ghostty"
+"ghostty/themes" = "~/.config/ghostty/themes"
+
 [helix.files]
 "helix/config.toml" = "~/.config/helix/config.toml"
 "helix/languages.toml" = "~/.config/helix/languages.toml"
