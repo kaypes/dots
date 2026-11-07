@@ -1,3 +1,9 @@
+[fish.files]
+"fish/completions" = "~/.config/fish/completions"
+"fish/config.fish" = "~/.config/fish/config.fish"
+"fish/fish_plugins" = "~/.config/fish/fish_plugins"
+"fish/functions" = "~/.config/fish/functions"
+
 [ghostty.files]
 "ghostty/config.ghostty" = "~/.config/ghostty/config.ghostty"
 "ghostty/themes" = "~/.config/ghostty/themes"

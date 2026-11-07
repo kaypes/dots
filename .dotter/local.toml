@@ -1,4 +1,5 @@
 packages = [
   "helix",
   "ghostty",
+  "fish",
 ]
