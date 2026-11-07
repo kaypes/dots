@@ -1,0 +1,194 @@
+# MIT License
+
+# Copyright (c) 2026- Kayque Pereira
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+
+# Syntax highlighting
+# -------------------
+"attribute" = "yellow"
+
+"type" = "yellow"
+"type.builtin" = "mauve"
+"type.enum.variant" = "teal"
+
+"constructor" = "sapphire"
+
+"constant" = "peach"
+"constant.character" = "teal"
+"constant.character.escape" = "pink"
+
+"string" = "green"
+"string.regexp" = "pink"
+"string.special" = "blue"
+"string.special.symbol" = "red"
+
+"comment" = { fg = "overlay2" }
+
+"variable" = "text"
+"variable.parameter" = { fg = "maroon" }
+"variable.builtin" = "red"
+"variable.other.member" = "blue"
+
+"label" = "sapphire" # used for lifetimes
+
+"punctuation" = "overlay2"
+"punctuation.special" = "sky"
+
+"keyword" = "mauve"
+"keyword.control.conditional" = { fg = "mauve" }
+
+"operator" = "sky"
+
+"function" = "blue"
+"function.macro" = "rosewater"
+
+"tag" = "blue"
+
+"namespace" = { fg = "yellow" }
+
+"special" = "blue" # fuzzy highlight
+
+"markup.heading.1" = "red"
+"markup.heading.2" = "peach"
+"markup.heading.3" = "yellow"
+"markup.heading.4" = "green"
+"markup.heading.5" = "sapphire"
+"markup.heading.6" = "lavender"
+"markup.list" = "teal"
+"markup.list.unchecked" = "overlay2"
+"markup.list.checked" = "green"
+"markup.bold" = { fg = "red", modifiers = ["bold"] }
+"markup.italic" = { fg = "red", modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "blue", modifiers = ["underlined"] }
+"markup.link.text" = "lavender"
+"markup.link.label" = "sapphire"
+"markup.raw" = "green"
+"markup.quote" = "pink"
+
+"diff.plus" = "green"
+"diff.minus" = "red"
+"diff.delta" = "blue"
+
+# User Interface
+# --------------
+"ui.background" = { fg = "text", bg = "base" }
+
+"ui.linenr" = { fg = "surface2" }
+"ui.linenr.selected" = { fg = "lavender" }
+
+"ui.statusline" = { fg = "subtext1", bg = "mantle" }
+"ui.statusline.inactive" = { fg = "surface2", bg = "mantle" }
+"ui.statusline.normal" = { fg = "base", bg = "rosewater", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "base", bg = "green", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "base", bg = "lavender", modifiers = ["bold"] }
+
+"ui.popup" = { fg = "text", bg = "surface0" }
+"ui.window" = { fg = "crust" }
+"ui.help" = { fg = "subtext1", bg = "surface0" }
+
+"ui.bufferline" = { fg = "subtext0", bg = "mantle" }
+"ui.bufferline.active" = { fg = "mauve", bg = "base", underline = { color = "mauve", style = "line" } }
+"ui.bufferline.background" = { bg = "crust" }
+
+"ui.text" = "text"
+"ui.text.focus" = { fg = "text", bg = "surface0", modifiers = ["bold"] }
+"ui.text.inactive" = { fg = "overlay1" }
+"ui.text.directory" = { fg = "blue" }
+
+"ui.virtual" = "overlay0"
+"ui.virtual.ruler" = { bg = "surface0" }
+"ui.virtual.indent-guide" = "surface0"
+"ui.virtual.inlay-hint" = { fg = "overlay1", bg = "mantle" }
+"ui.virtual.jump-label" = { fg = "peach", modifiers = ["bold"] }
+
+"ui.selection" = { fg = "selection_fg", bg = "selection_bg" }
+
+"ui.cursor" = { fg = "base", bg = "secondary_cursor" }
+"ui.cursor.primary" = { fg = "base", bg = "rosewater" }
+"ui.cursor.match" = { fg = "peach", modifiers = ["bold"] }
+
+"ui.cursor.primary.normal" = { fg = "base", bg = "rosewater" }
+"ui.cursor.primary.insert" = { fg = "base", bg = "green" }
+"ui.cursor.primary.select" = { fg = "base", bg = "lavender" }
+
+"ui.cursor.normal" = { fg = "base", bg = "secondary_cursor_normal" }
+"ui.cursor.insert" = { fg = "base", bg = "secondary_cursor_insert" }
+"ui.cursor.select" = { fg = "base", bg = "secondary_cursor_select" }
+
+"ui.cursorline.primary" = { bg = "cursorline" }
+
+"ui.highlight" = { bg = "surface1", modifiers = ["bold"] }
+
+"ui.menu" = { fg = "subtext1", bg = "surface0" }
+"ui.menu.selected" = { fg = "text", bg = "surface1", modifiers = ["bold"] }
+
+"diagnostic.error" = { underline = { color = "red", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "yellow", style = "curl" } }
+"diagnostic.info" = { underline = { color = "sky", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "teal", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+
+error = "red"
+warning = "yellow"
+info = "sky"
+hint = "teal"
+
+rainbow = ["red", "peach", "yellow", "green", "sapphire", "lavender"]
+
+[palette]
+rosewater = "#bbbbbb"
+flamingo  = "#c4a000"
+pink = "#d392cc"
+mauve = "#ad7fa8"
+red = "#ef2929"
+maroon = "#f06868"
+peach = "#e95420"
+yellow = "#fce94f"
+green = "#8ae234"
+teal = "#06989a"
+sky = "#34e2e2"
+sapphire = "#5288c9"
+blue = "#729fcf"
+lavender = "#b5d5ff"
+
+text = "#eeeeec"
+subtext1 = "#d3d7cf"
+subtext0 = "#bbbbbb"
+overlay2 = "#9e919a"
+overlay1 = "#7a6c75"
+overlay0 = "#555753"
+
+surface2 = "#6e2956"
+surface1 = "#541c41"
+surface0 = "#401230"
+base = "#300a24"
+mantle = "#24071b"
+crust = "#180412"
+
+selection_bg = "#b5d5ff"
+selection_fg = "#000000"
+cursorline = "#3d102e"
+secondary_cursor = "#9e919a"
+secondary_cursor_normal = "#9e919a"
+secondary_cursor_insert = "#4e9a06"
+secondary_cursor_select = "#729fcf"
