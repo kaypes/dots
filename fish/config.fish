@@ -73,37 +73,41 @@ end
 ## Useful aliases
 
 # Replace ls and tree with eza
-alias ls='eza -al --color=always --group-directories-first --icons=always' # preferred listing
-alias la='eza -a --color=always --group-directories-first --icons=always' # all files and dirs
-alias lt='eza -aT --color=always --group-directories-first --icons=always' # tree listing
-alias ll='eza -l --color=always --group-directories-first --icons=always' # long format
-alias l.="eza -a | grep -e '^\.'" # show only dotfiles
+alias ls 'eza -al --color=always --group-directories-first --icons=always' # preferred listing
+alias la 'eza -a --color=always --group-directories-first --icons=always' # all files and dirs
+alias lt 'eza -aT --color=always --group-directories-first --icons=always' # tree listing
+alias ll 'eza -l --color=always --group-directories-first --icons=always' # long format
+alias l. "eza -a | grep -e '^\.'" # show only dotfiles
 
 alias tree='eza -T --color=always --group-directories-first --icons=always' # tree listing
 
 # Git alias
+# TODO
 
 # Common use
-alias grubup="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-alias tarnow='tar -acf '
-alias untar='tar -zxvf '
-alias wget='wget -c '
-alias psmem='ps auxf | sort -nr -k 4'
-alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+alias grubup "sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias tarnow 'tar -acf '
+alias untar 'tar -zxvf '
+alias wget 'wget -c '
+alias psmem 'ps auxf | sort -nr -k 4'
+alias psmem10 'ps auxf | sort -nr -k 4 | head -10'
 
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-alias tree='tree -C'
+alias dir 'dir --color=auto'
+alias vdir 'vdir --color=auto'
+alias grep 'grep --color=auto'
+alias fgrep 'fgrep --color=auto'
+alias egrep 'egrep --color=auto'
+alias tree 'tree -C'
 
-alias hw='hwinfo --short'
+alias hw 'hwinfo --short'
 
-alias jctl="journalctl -p 3 -xb"
+alias jctl 'journalctl -p 3 -xb'
 
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
+alias .. 'cd ..'
+alias ... 'cd ../..'
+alias .... 'cd ../../..'
+alias ..... 'cd ../../../..'
+alias ...... 'cd ../../../../..'
+
+alias c 'clear'
+
