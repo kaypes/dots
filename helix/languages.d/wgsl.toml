@@ -1,0 +1,16 @@
+[language-server]
+
+wgsl-analyzer = { command = "wgsl-analyzer" }
+
+[[language]]
+name = "wgsl"
+scope = "source.wgsl"
+file-types = ["wgsl"]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = [ "wgsl-analyzer" ]
+indent = { tab-width = 4, unit = "    " }
+
+[[grammar]]
+name = "wgsl"
+source = { git = "https://github.com/szebniok/tree-sitter-wgsl", rev = "272e89ef2aeac74178edb9db4a83c1ffef80a463" }

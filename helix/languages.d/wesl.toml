@@ -1,0 +1,12 @@
+[[language]]
+name = "wesl"
+scope = "source.wesl"
+file-types = ["wesl"]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+indent = { tab-width = 4, unit = "    " }
+
+[[grammar]]
+name = "wesl"
+source = { git = "https://github.com/wgsl-tooling-wg/tree-sitter-wesl", rev = "94ee6122680ef8ce2173853ca7c99f7aaeeda8ce" }
+

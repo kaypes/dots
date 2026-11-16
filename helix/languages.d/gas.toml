@@ -1,0 +1,17 @@
+[language-server]
+
+asm-lsp = { command = "asm-lsp" }
+
+
+[[language]]
+name = "gas"
+scope = "source.gas"
+file-types = ["s"]
+injection-regex = "gas"
+comment-token = "#"
+indent = { tab-width = 8, unit = "        " }
+language-servers = [ "asm-lsp" ]
+
+[[grammar]]
+name = "gas"
+source = { git = "https://github.com/sirius94/tree-sitter-gas", rev = "5d6c0a0b4d7b6f35913906ba922fe38064a9bede" }

@@ -4,8 +4,10 @@ bash-language-server = { command = "bash-language-server", args = ["start"] }
 clangd = { command = "clangd" }
 neocmakelsp = { command = "neocmakelsp", args = ["stdio"] }
 fish-lsp = { command = "fish-lsp", args = ["start"], environment = { fish_lsp_show_client_popups = "false" } }
+asm-lsp = { command = "asm-lsp" }
 ghostty-ls = { command = "ghostty-ls" }
 vscode-json-language-server = { command = "vscode-json-language-server", args = ["--stdio"], config = { provideFormatter = true, json = { validate = { enable = true } } } }
+markdown-oxide = { command = "markdown-oxide" }
 mesonlsp = { command = "mesonlsp", args = ["--lsp"] }
 mojo-lsp-server = { command = "pixi", args = ["run", "mojo-lsp-server"] }
 ols = { command = "ols", args = [] }
@@ -15,6 +17,8 @@ ty = { command = "ty", args = ["server"] }
 ruby-lsp = { command = "ruby-lsp" }
 sourcekit-lsp = { command = "sourcekit-lsp" }
 tombi = { command = "tombi", args = ["lsp"] }
+tinymist = { command = "tinymist" }
+wgsl-analyzer = { command = "wgsl-analyzer" }
 yaml-language-server = { command = "yaml-language-server", args = ["--stdio"] }
 ansible-language-server = { command = "ansible-language-server", args = ["--stdio"] }
 zls = { command = "zls" }
@@ -212,6 +216,16 @@ formatter = { command = "fish_indent" }
 
 
 [[language]]
+name = "gas"
+scope = "source.gas"
+file-types = ["s"]
+injection-regex = "gas"
+comment-token = "#"
+indent = { tab-width = 8, unit = "        " }
+language-servers = [ "asm-lsp" ]
+
+
+[[language]]
 name = "ghostty"
 scope = "source.ghostty"
 file-types = ["ghostty", { glob = "ghostty/config" }]
@@ -388,6 +402,28 @@ shebangs = ["make", "gmake"]
 injection-regex = "(make|makefile|Makefile|mk)"
 comment-token = "#"
 indent = { tab-width = 4, unit = "\t" }
+
+
+[[language]]
+name = "markdown"
+scope = "source.md"
+injection-regex = "md|markdown"
+file-types = ["md", "livemd", "markdown", "mdx", "mkd", "mkdn", "mdwn", "mdown", "markdn", "mdtxt", "mdtext", "workbook", { glob = "PULLREQ_EDITMSG" }]
+roots = [".marksman.toml"]
+language-servers = [ "markdown-oxide" ]
+indent = { tab-width = 2, unit = "  " }
+block-comment-tokens = { start = "<!--", end = "-->" }
+
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+"'" = "'"
+'`' = '`'
+'‘' = '’'
+'«' = '»'
+'“' = '”'
 
 
 [[language]]
@@ -655,6 +691,43 @@ indent = { tab-width = 2, unit = "  " }
 
 
 [[language]]
+name = "typst"
+scope = "source.typst"
+injection-regex = "typ(st)?"
+file-types = ["typst", "typ"]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = [ "tinymist" ]
+indent = { tab-width = 2, unit = "  " }
+
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'$' = '$'
+'"' = '"'
+
+
+[[language]]
+name = "wesl"
+scope = "source.wesl"
+file-types = ["wesl"]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+indent = { tab-width = 4, unit = "    " }
+
+
+[[language]]
+name = "wgsl"
+scope = "source.wgsl"
+file-types = ["wgsl"]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = [ "wgsl-analyzer" ]
+indent = { tab-width = 4, unit = "    " }
+
+
+[[language]]
 name = "xml"
 scope = "source.xml"
 injection-regex = "xml"
@@ -835,6 +908,10 @@ name = "fish"
 source = { git = "https://github.com/ram02z/tree-sitter-fish", rev = "a78aef9abc395c600c38a037ac779afc7e3cc9e0" }
 
 [[grammar]]
+name = "gas"
+source = { git = "https://github.com/sirius94/tree-sitter-gas", rev = "5d6c0a0b4d7b6f35913906ba922fe38064a9bede" }
+
+[[grammar]]
 name = "ghostty"
 source = { git = "https://github.com/bezhermoso/tree-sitter-ghostty" , rev = "4a0fd2ae492c6bbfd13a134067ee4258f0e0f189" }
 
@@ -872,6 +949,10 @@ source = { git = "https://github.com/tree-sitter-grammars/tree-sitter-lua", rev 
 [[grammar]]
 name = "make"
 source = { git = "https://github.com/alemuller/tree-sitter-make", rev = "a4b9187417d6be349ee5fd4b6e77b4172c6827dd" }
+
+[[grammar]]
+name = "markdown"
+source = { git = "https://github.com/tree-sitter-grammars/tree-sitter-markdown", rev = "f969cd3ae3f9fbd4e43205431d0ae286014c05b5", subpath = "tree-sitter-markdown" }
 
 [[grammar]]
 name = "meson"
@@ -920,6 +1001,19 @@ name = "toml"
 source = { git = "https://github.com/tree-sitter-grammars/tree-sitter-toml", rev = "64b56832c2cffe41758f28e05c756a3a98d16f41" }
 
 
+
+[[grammar]]
+name = "typst"
+source = { git = "https://github.com/uben0/tree-sitter-typst", rev = "13863ddcbaa7b68ee6221cea2e3143415e64aea4" }
+
+[[grammar]]
+name = "wesl"
+source = { git = "https://github.com/wgsl-tooling-wg/tree-sitter-wesl", rev = "94ee6122680ef8ce2173853ca7c99f7aaeeda8ce" }
+
+
+[[grammar]]
+name = "wgsl"
+source = { git = "https://github.com/szebniok/tree-sitter-wgsl", rev = "272e89ef2aeac74178edb9db4a83c1ffef80a463" }
 
 [[grammar]]
 name = "xml"
