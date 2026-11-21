@@ -109,5 +109,10 @@ alias .... 'cd ../../..'
 alias ..... 'cd ../../../..'
 alias ...... 'cd ../../../../..'
 
-alias c 'clear'
+alias c clear
 
+alias ssh 'ghostty +ssh --'
+
+# Activation
+mise activate fish | source
+eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
