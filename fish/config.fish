@@ -115,4 +115,3 @@ alias ssh 'ghostty +ssh --'
 
 # Activation
 mise activate fish | source
-eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
