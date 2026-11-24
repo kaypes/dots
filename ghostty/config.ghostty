@@ -18,3 +18,5 @@ background-blur = true
 
 shell-integration-features = ssh-env
 shell-integration-features = ssh-terminfo
+
+drag-handle = always
