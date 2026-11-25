@@ -1,0 +1,7 @@
+[tools]
+ruby = ["latest", "mruby"]
+"conda:mruby" = "latest"
+
+"gem:ruby-lsp" = "latest"
+"gem:rubocop" = "latest"
+

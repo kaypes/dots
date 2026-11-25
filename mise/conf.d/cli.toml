@@ -1,0 +1,10 @@
+[tools]
+atuin = "latest"
+bat = "latest"
+delta = "latest"
+"aqua:SuperCuber/dotter" = "latest"
+eza = "latest"
+fd = "latest"
+fzf = "latest"
+gh = "latest"
+ripgrep = "latest"

@@ -1,0 +1,9 @@
+[tools]
+java = "corretto-21"
+
+maven = "latest"
+gradle = "latest"
+
+[settings]
+java.shorthand_vendor = "corretto"
+

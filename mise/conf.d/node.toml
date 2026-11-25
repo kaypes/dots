@@ -1,0 +1,9 @@
+[tools]
+node = "latest"
+"npm:typescript" = "latest"
+
+"npm:typescript-language-server" = "latest"
+pnpm = "latest"
+
+[settings]
+npm.package_manager = "pnpm"

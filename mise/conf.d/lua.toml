@@ -1,0 +1,6 @@
+[tools]
+lua = "5.1"
+luajit = "latest"
+
+lua-language-server = "latest"
+stylua = "latest"

@@ -1,0 +1,4 @@
+[tools]
+zig = "latest"
+
+zls = "latest"

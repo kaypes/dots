@@ -1,0 +1,9 @@
+[tools]
+uv = "latest"
+pixi = "latest"
+
+ruff = "latest"
+ty = "latest"
+
+[settings.pipx]
+uvx = true
